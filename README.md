@@ -1,2 +1,5 @@
 # todolist-react
-simple todo list app created in react
+Simple todo list app created
+
+React and Python
+Container: Docker
