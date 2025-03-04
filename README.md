@@ -1,5 +1,4 @@
 # todolist-react
-Simple todo list app created
+Simple todo list app created MERN
 
-React and Python
 Container: Docker
