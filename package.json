@@ -1,0 +1,27 @@
+{
+  "name": "todolist-react",
+  "version": "1.0.0",
+  "description": "Simple todo list app created MERN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eaponiente/todolist-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eaponiente/todolist-react/issues"
+  },
+  "homepage": "https://github.com/eaponiente/todolist-react#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.0"
+  },
+  "devDependencies": {}
+}
