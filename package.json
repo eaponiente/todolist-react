@@ -1,27 +1,14 @@
 {
-  "name": "todolist-react",
-  "version": "1.0.0",
-  "description": "Simple todo list app created MERN",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eaponiente/todolist-react.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eaponiente/todolist-react/issues"
-  },
-  "homepage": "https://github.com/eaponiente/todolist-react#readme",
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "mongoose": "^8.12.0"
-  },
-  "devDependencies": {}
+    "name": "nx-fe",
+    "version": "0.0.0",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "server": "cd server/src && node server.js"
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+    "dependencies": {
+        "express-validator": "^7.2.1",
+        "joi": "^17.13.3"
+    }
 }
