@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+.todo-container {
+    max-height: 500px; /* Adjust as needed */
+    overflow-y: auto;
+    
+    /* Hide default scrollbar */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Firefox */
+  }
+  
+  /* WebKit browsers (Chrome, Safari) */
+  .todo-container::-webkit-scrollbar {
+    width: 8px; /* Width of scrollbar */
+  }
+  
+  .todo-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px;
+  }
+  
+  .todo-container::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 10px;
+  }
+  
+  .todo-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker on hover */
+  }

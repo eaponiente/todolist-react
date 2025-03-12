@@ -21,6 +21,14 @@ export const createTodosApi = (data: CreateTodoPayload): AxiosPromise<any | null
     });
 };
 
+export const updateTodoApi = (todoId: string, data: CreateTodoPayload): AxiosPromise<unknown | any> => {
+    return axios.request({
+        url: `${config.domain}/todos/${todoId}`,
+        method: 'PUT',
+        data
+    });
+};
+
 export const deleteTodoApi = (todoId: string): AxiosPromise<unknown | any> => {
     return axios.request({
         url: `${config.domain}/todos/${todoId}`,

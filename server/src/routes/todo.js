@@ -29,12 +29,45 @@ router.post('/todos', [
         const newTodo = await todo.save();
         return res.status(201).json({
             _id: newTodo._id,
-            text: newTodo.text
+            text: newTodo.text,
+            completed: newTodo.completed
         });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 });
+
+router.put('/todos/:id', [
+    body('text').isString().withMessage('Text must be string.').isLength({ min: 3 }).withMessage('Text must have a min length of 3 characters')
+], async (req, res) => {
+    const todo = await Todo.findById(req.params.id);
+    if (!todo) {
+        return res.status(404).json({ message: 'Todo not found' });
+    }
+
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+
+    await Todo.updateMany(
+        { subscriptionPlan: { $exists: false } },
+        { $set: { subscriptionPlan: 'free' } }
+      );
+
+    try {
+        const newTodo = await todo.updateOne({ _id: req.params.id}, { text: req.body.text });
+        return res.status(201).json({
+            _id: newTodo._id,
+            text: newTodo.text,
+            text: newTodo.completed
+        });
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
 // Delete a todo
 router.delete('/todos/:id', async (req, res) => {
     try {
@@ -43,9 +76,10 @@ router.delete('/todos/:id', async (req, res) => {
             return res.status(404).json({ message: 'Todo not found' });
         }
         await todo.deleteOne();
-        res.json({ message: 'Todo deleted' });
+        return res.json({ message: 'Todo deleted' });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        return res.status(500).json({ message: err.message });
     }
 });
+
 export default router;

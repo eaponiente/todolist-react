@@ -2,14 +2,19 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import * as dotenv from 'dotenv';
+import path from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const envPath = path.resolve(process.cwd(), '.env'); 
+dotenv.config({ path: envPath });
+
 // CORS configuration options
 const corsOptions = {
     origin: 'http://localhost:5173', // Specify the allowed origin
-    methods: ['GET', 'POST', 'DELETE'], // Specify allowed HTTP methods
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
     allowedHeaders: ['Content-Type'], // Specify allowed headers
     credentials: true, // Allow credentials (cookies, authentication)
 };
